@@ -842,6 +842,10 @@ def get_loss_graph_images(selection):
     Returns:
         dict: A dictionary of image paths keyed by desired_tags.
     """
+    if not selection:
+        print("No project selected")
+        return {}
+    
     loss_graphs_path = os.path.join(index_root, selection, 'loss_graphs')
     if not os.path.exists(loss_graphs_path):
         print(f"Directory not found: {loss_graphs_path}")
